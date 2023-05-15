@@ -12,6 +12,7 @@ def get_location_names():
         'locations':util.get_location_names()
     })
     response.headers.add('Access-Control-Allow-Origin','*')
+    print (response)
     return response
 
 @app.route('/predict_home_price', methods=['GET','POST'])

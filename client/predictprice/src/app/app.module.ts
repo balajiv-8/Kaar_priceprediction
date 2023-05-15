@@ -43,7 +43,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './components/about/about.component';
 
 const materialModules = [
   CdkTreeModule,
@@ -88,16 +89,12 @@ const materialModules = [
   ],
   exports: [
     ...materialModules
-  ]
+  ],
+  
 })
 export class AngularMaterialModule { }
 
-const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent }
-];
+
 
 
 
@@ -107,15 +104,16 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    AboutComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
     FlexLayoutModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [RouterModule],
   providers: [],

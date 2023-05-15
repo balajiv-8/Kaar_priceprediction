@@ -1,0 +1,245 @@
+:root {
+    font-size: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    
+}
+
+.signup-page {
+    font-weight: 1000;
+}
+h1  {
+    font-size: 2.25rem;
+    font-weight: 700;
+
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.small {
+    font-size: 80%;
+    text-align: center;
+}
+
+.split-screen {
+    display: flex;
+    flex-direction: column;
+
+}
+.left {
+    height: 200px;
+}
+
+.left , .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)),url(\src\app\components\register\register.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.left .copy {
+    font-family: 'Poiret', sans-serif;
+    color: white;
+    text-align: center;
+    
+}
+.left .copy h1 {
+    font-size: 100px;
+}
+.left p {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.right .copy {
+    color: black;
+    text-align: center;
+    
+}
+
+.right .copy p {
+    margin: 1.5em 0;
+    font-size: 0.875rem;
+    font-family: 'Josefin';
+}
+
+.right form {
+    width: 328px;
+    
+}
+
+.right h2 {
+    font-family: 'Baron';
+    font-size: 50px;
+    color: #10A19D;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #c4c4c4;
+    padding: 1em;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Dosis';
+}
+
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.input-control.success input {
+    border-color: #6FEDD6;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+.input-control .error {
+    color: #ff3860;
+    font-size: 13px;
+    height: 15px;
+}
+.container h2 {
+    font-family: 'Baron', sans-serif;
+    font-size: 60px;
+    color: #10A19D;
+    text-align: center;
+}
+
+.container p, a {
+    text-align: center;
+    font-size: larger;
+}
+
+.container a {
+    text-decoration: underline;
+    font-size: large;
+
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+    user-select: none;
+    margin: 1rem 0 1.25rem 0;
+}
+
+.checkbox-container input:checked~.checkmark {
+    background-color: #10A19D;
+    border: 1px solid #10A19D;
+}
+
+.checkmark {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+    top: -4px;
+    left: 0;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    width: 5px;
+    height: 10px;
+    top: 4px;
+    left: 8px;
+    transform: rotate(45deg);
+}
+
+.signup-btn {
+    display: block;
+    width: 100%;
+    background: #10A19D;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.signup-btn:hover {
+    background: #6FEDD6;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+ 
+    .split-screen {
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .left, .right {
+        display: flex;
+        width: 50%;
+        height: auto;
+    }
+}
+
+
+.error {
+    font-weight: 300;
+    color: #ff3860;
+    margin-bottom: 5px;
+    font-family: 'Dosis';
+}

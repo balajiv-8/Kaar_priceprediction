@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-home',
@@ -12,10 +14,17 @@ export class HomeComponent implements OnInit {
   bathrooms: number = 2;
   location: string = '';
   estimatedPrice!: number;
-
-  constructor(private http: HttpClient) { }
+  locations!: [];
+ 
+  constructor(private http: HttpClient , private router: Router, private cookieService: CookieService) { }
+  
 
   ngOnInit(): void {
+    const token = this.cookieService.get('token'); // Assuming your token is stored with the key 'token'
+
+  if (!token) {
+    this.router.navigate(['/login']); // Redirect to the login page
+  }
     this.getLocationNames();
   }
 
@@ -60,16 +69,14 @@ export class HomeComponent implements OnInit {
   getLocationNames(): void {
     const url = "http://localhost:5000/get_location_names";
     this.http.get<any>(url).subscribe(data => {
-      const locations = data.locations;
-      this.location = ''; // Clear the selected location
-      // Assuming you have a FormControl for the location in your form
-      // You can update the FormControl value instead of directly assigning to this.location if using Reactive Forms
-      for (let i = 0; i < locations.length; i++) {
-        if (i === 0) {
-          this.location = locations[i];
-        }
-        // Do something with the locations[i] if needed
-      }
+      this.locations = data.locations;
+      console.log(this.locations)
+      // this.location = ''; 
+      // for (let i = 0; i < locations.length; i++) {
+      //   if (i === 0) {
+      //     this.location = locations[i];
+      //   }
+      // }
     });
   }
 }

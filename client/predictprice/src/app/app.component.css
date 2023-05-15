@@ -1,0 +1,34 @@
+/* Styles for the mat-toolbar */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b9bfc; /* Primary color */
+    color: #fff; /* Text color */
+    padding: 0 16px;
+    height: 64px; /* Adjust height as needed */
+  }
+  
+  /* Styles for the navigation links */
+  .nav-tool-items {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+  }
+  
+  .nav-tool-items a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-tool-items a.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Active link background color */
+  }
+  
+  /* Styles for the router-outlet */
+  router-outlet {
+    display: block;
+    padding: 16px;
+  }
+  
