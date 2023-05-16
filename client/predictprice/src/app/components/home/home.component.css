@@ -5,7 +5,6 @@
 	margin-bottom: 36px;
 	overflow: hidden;
 }
-
 .switch-field input {
 	position: absolute !important;
 	clip: rect(0, 0, 0, 0);
