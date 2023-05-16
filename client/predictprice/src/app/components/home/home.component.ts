@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   area: number = 1000;
   bhk: number = 2;
   bathrooms: number = 2;
-  location: string = '';
+  getLocation: string = '';
   estimatedPrice!: number;
   locations!: [];
  
@@ -53,14 +53,16 @@ export class HomeComponent implements OnInit {
 
   onClickedEstimatePrice(): void {
     console.log("Estimate price button clicked");
-    console.log(this.area, this.bhk, this.bathrooms, this.location);
+    const selectedLocation = (document.getElementById("uiLocations") as HTMLSelectElement).value;
+    this.getLocation=selectedLocation
+    console.log(this.area, this.bhk, this.bathrooms, this.getLocation);
 
     const url = "http://localhost:5000/predict_home_price";
     this.http.post<any>(url, {
       total_sqft: parseFloat(this.area.toString()),
       size: this.bhk.toString(),
       bath: this.bathrooms.toString(),
-      location: this.location
+      location: this.getLocation
     }).subscribe(data => {
       this.estimatedPrice = data.estimated_price;
     });

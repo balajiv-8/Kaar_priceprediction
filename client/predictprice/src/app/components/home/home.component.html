@@ -1,5 +1,5 @@
 <div class="img"></div>
-<form class="form">
+<form class="form" >
   <h2>Area (Square Feet)</h2>
   <input class="area" type="text" id="uiSqft" class="floatLabel" name="Squareft" [(ngModel)]="area" value="1000">
   
@@ -33,12 +33,12 @@
   
   <h2>Location</h2>
   <div>
-     <select  class="location" name="" id="uiLocations" >
-      <option  value=""  selected="selected">Choose a Location</option>
-      <!-- <option>Electronic City</option> -->
-      <option *ngfor="let i of this.locations" >{{i}}</option>
+    <select class="location" name="" id="uiLocations" [(ngModel)]="getLocation" placeholder="choose a location">
+      <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+      <option *ngFor="let location of locations" [value]="location">{{location}}</option>
     </select>
   </div>
+    
   
   <button class="submit" (click)="onClickedEstimatePrice()" type="button">Estimate Price</button>
   
