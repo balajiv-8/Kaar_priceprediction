@@ -17,8 +17,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(authRouter);
 
-const DB = "mongodb+srv://SONofaLEGEND:tVFkhVlmiv6uMb5P@cluster0.lqxtdmk.mongodb.net/test";
-
+const DB = "mongodb+srv://balajich8:balajibalaji@cluster0.mnb8kcp.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(DB).then(
     console.log('CONNECTED TO DB')
 )

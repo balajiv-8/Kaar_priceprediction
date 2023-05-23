@@ -60,7 +60,7 @@ h2 {
 }
 .area{
   font-family: "Roboto", sans-serif;
-  outline: 0;
+  outline: none;
   background: #f2f2f2;
   width: 76%;
   border: 0;
@@ -132,4 +132,21 @@ body, html {
 }
 .floatLabel{
 	padding:10px;
+}
+#uiSqft{
+	outline: none;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+.parent{
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+}
+.leftcontainer{
+	background: url('\src\app\components\home\house-price.jpg');
+	width: 100%;
+	background: #5ba92d;
+	height: 100%;
 }
